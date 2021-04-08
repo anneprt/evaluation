@@ -1,0 +1,1 @@
+INSERT INTO personne (id, titre, nom, prenom, email, mot_de_passe, adresse1, adresse2, ville, code_postal, cgu_acceptees) VALUES (1, 'Monsieur', 'Snow', 'Jon', 'jon.snow@winteriscoming.com', 'Passe', '123 rue Lulu', 'Appt 2', 'Nowhere', '00000', true);
