@@ -1,5 +1,6 @@
 package com.evaluation.evaluation.service;
 
+import com.evaluation.evaluation.exception.CguNonAccepteesException;
 import com.evaluation.evaluation.exception.PersonneIntrouvableException;
 import com.evaluation.evaluation.model.Personne;
 import com.evaluation.evaluation.repository.PersonneRepository;
@@ -28,6 +29,9 @@ public class PersonneService {
     }
 
     public Personne createPersonne(Personne personne) {
+        if(!personne.isCguAcceptees()){
+            throw new CguNonAccepteesException("Erreur lors de l'enregistrement : vous devez accepter les CGU");
+        }
         Personne u = new Personne();
         return saveWithNewValues(personne, u);
     }

@@ -14,37 +14,36 @@ import javax.validation.constraints.NotBlank;
 public class Personne {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner un titre")
     private String titre;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner un nom")
     private String nom;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner un prenom")
     private String prenom;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner un email valide")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner un mot de passe")
     private String motDePasse;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner une adresse")
     private String adresse1;
 
-    @NotBlank
     private String adresse2;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner un code postal")
     private String codePostal;
 
-    @NotBlank
+    @NotBlank(message = "Veuillez renseigner la ville")
     private String ville;
 
-    @AssertTrue
+    @AssertTrue(message = "Erreur lors de l'enregistrement : vous devez accepter les CGU")
     private boolean cguAcceptees;
 
 
